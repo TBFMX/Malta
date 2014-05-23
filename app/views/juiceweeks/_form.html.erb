@@ -1,0 +1,29 @@
+<%= form_for(@juiceweek) do |f| %>
+  <% if @juiceweek.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@juiceweek.errors.count, "error") %> prohibited this juiceweek from being saved:</h2>
+
+      <ul>
+      <% @juiceweek.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :juicer_id %><br>
+    <%= select("juiceweek", "juicer_id", Juicer.all.collect {|p| [ p.name, p.id ] }, {include_blank: 'Seleccione uno'}) %>
+  </div>
+  <div class="field">
+    <%= f.label :juice_id %><br>
+    <%= select("juiceweek", "juice_id", Juice.all.collect {|p| [ p.name, p.id ] }, {include_blank: 'Seleccione uno'}) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

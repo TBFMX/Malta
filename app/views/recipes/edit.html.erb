@@ -1,0 +1,57 @@
+
+<table>
+<td>  
+<h1>Configurar Receta</h1>
+
+
+<%= form_for :recipe, url: @recipe, method: :patch do |f| %>
+  <% if @recipe.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
+
+      <ul>
+      <% @recipe.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :juice_id %><br>
+    <%#= f.text_field :juice_id %>
+      <p><%= @recipe.juice.name %></p>
+    
+    <%#= @juice.name %>
+    <%#= select("recipe", "juice_id",options_for_select( Juice.all.collect {|p| [ p.name, p.id ]}, "25" ), {include_blank: 'Seleccione uno'}) %>
+  </div>
+  <div class="field">
+    <%= f.label :ingredient_id %><br>
+    <%= select("recipe", "ingredient_id", Ingredient.all.collect {|p| [ p.name, p.id ]}, {include_blank: 'Seleccione uno'}) %>
+  </div>
+  <div class="field">
+    <%= f.label :portion %><br>
+    <%= f.text_field :portion %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+  <% end %>
+
+<%#= render 'form' %>
+
+<%= link_to 'Back', juiceweeks_url %>
+</td>
+<td>
+  <% if @ingredient.nil?
+        @ingredient = Ingredient.new
+        @lista = Recipe.where("juice_id = ?",@recipe.juice_id) 
+    end
+   %>
+<%= render partial: "ingredient", locals: {ingredient: @ingredient} %>
+</td>
+<td>
+<%= render partial: "ingredient_list", locals: {lista: @lista} %>
+</td>
+</table>

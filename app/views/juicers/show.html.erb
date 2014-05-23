@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @juicer.name %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @juicer.date %>
+</p>
+
+<p>
+  <strong>Juice:</strong>
+  <%= @juicer.juice_id %>
+</p>
+
+<%= link_to 'Edit', edit_juicer_path(@juicer) %> |
+<%= link_to 'Back', juicers_path %>

@@ -1,0 +1,12 @@
+
+<palign="center">Ingredientes Agregados</p>
+<table align="center">
+	<% @lista.each do |lista| %>
+		<ul align="center">
+		  <% unless lista.ingredient.nil? %>
+            <li align="center"><%= lista.ingredient.name %></li> 
+            
+          <% end %> 
+        </ul>  
+	<% end %>
+</table>

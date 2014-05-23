@@ -1,0 +1,51 @@
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre </th>
+      <th>Date</th>
+      <th>Juice</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @juicers.each do |juicer| %>
+      <tr>
+        <td><%= juicer.name %></td>
+        <td><%= juicer.date %></td>
+        <td><%= juicer.juice_id %></td>
+        <td><%= link_to 'Show', juicer %></td>
+        <td><%= link_to 'Edit', edit_juicer_path(juicer) %></td>
+        <td><%= link_to 'Destroy', juicer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+<table>
+<thead>
+    <tr>
+      <th>Dia </th>
+      <th>Encargado</th>
+      <th>Jugo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+<tbody>
+<tr>
+
+
+</tr>	
+
+
+
+</tbody>
+
+
+
+
+</table>

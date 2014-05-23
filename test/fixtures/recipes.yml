@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  juice_id: 1
+  ingredient_id: 1
+  portion: 9.99
+
+two:
+  juice_id: 1
+  ingredient_id: 1
+  portion: 9.99

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @juiceweek.date %>
+</p>
+
+<p>
+  <strong>Juicer:</strong>
+  <%= @juiceweek.juicer_id %>
+</p>
+
+<p>
+  <strong>Juice:</strong>
+  <%= @juiceweek.juice_id %>
+</p>
+
+<%= link_to 'Edit', edit_juiceweek_path(@juiceweek) %> |
+<%= link_to 'Back', juiceweeks_path %>
