@@ -24,6 +24,6 @@
     <%= select("juiceweek", "juice_id", Juice.all.collect {|p| [ p.name, p.id ] }, {include_blank: 'Seleccione uno'}) %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit nil, class: "boton"%>
   </div>
 <% end %>
